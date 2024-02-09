@@ -1,0 +1,42 @@
+~ ffff ffff ffff ffff ffff ffff ffff ffff  = 0000 0000 0000 0000 0000 0000 0000 0000
+
+~ 2222 2222 2222 2222 2222 2222 2222 2222  = dddd dddd dddd dddd dddd dddd dddd dddd
+
+ffff ffff ffff ffff ffff ffff ffff ffff  << 16 = ffff ffff ffff ffff ffff ffff ffff 0000
+
+ffff ffff ffff ffff ffff ffff ffff ffff  << 65 = ffff ffff ffff fffe 0000 0000 0000 0000
+
+00ff ffff ffff ffff ffff ffff ffff ffff  >> 16 = 0000 00ff ffff ffff ffff ffff ffff ffff
+
+ffff ffff ffff ffff ffff ffff ffff ffff  >> 16 = ffff ffff ffff ffff ffff ffff ffff ffff
+
+00ff ffff ffff ffff ffff ffff ffff ffff  >> 80 = 0000 0000 0000 0000 0000 00ff ffff ffff
+
+ffff ffff ffff ffff ffff ffff ffff ffff  >> 80 = ffff ffff ffff ffff ffff ffff ffff ffff
+
+ffff ffff ffff ffff ffff ffff ffff ffff  &
+0000 ffff 0000 ffff 0000 ffff 0000 ffff  =
+0000 ffff 0000 ffff 0000 ffff 0000 ffff
+
+ffff 0000 ffff 0000 ffff 0000 ffff 0000  |
+0000 ffff 0000 ffff 0000 ffff 0000 ffff  =
+ffff ffff ffff ffff ffff ffff ffff ffff
+
+ffff ffff ffff 0000 0000 ffff ffff ffff  ^
+0000 0000 0000 ffff 0000 ffff ffff ffff  =
+ffff ffff ffff ffff 0000 0000 0000 0000
+
+ffff ffff ffff 0000 0000 ffff ffff ffff  +
+0000 0000 0000 ffff 0000 ffff ffff ffff  =
+ffff ffff ffff ffff 0001 ffff ffff fffe
+
+7fff ffff ffff 0000 0000 ffff ffff ffff  +
+7f00 0000 0000 ffff 0000 ffff ffff ffff  =
+feff ffff ffff ffff 0001 ffff ffff fffe  - Overflow
+
+8fff ffff ffff 0000 0000 ffff ffff ffff  +
+8f00 0000 0000 ffff 0000 ffff ffff ffff  =
+1eff ffff ffff ffff 0001 ffff ffff fffe  - Overflow
+
+Invalid hex value: ffff111122223333444455556666777g
+Invalid operation: sub
